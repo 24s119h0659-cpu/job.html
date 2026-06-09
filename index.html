@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>양질의 일자리와 경제성장</title>
+
+<style>
+body{
+    font-family: 맑은 고딕;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+.page{
+    display:none;
+    padding:50px;
+}
+
+#main{
+    display:block;
+}
+
+button{
+    padding:12px 20px;
+    margin:10px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:#28a745;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1f7a34;
+}
+
+.content{
+    width:70%;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+</style>
+
+<script>
+function showPage(pageId){
+
+    let pages = document.querySelectorAll(".page");
+
+    for(let i=0; i<pages.length; i++){
+        pages[i].style.display="none";
+    }
+
+    document.getElementById(pageId).style.display="block";
+}
+</script>
+
+</head>
+<body>
+
+<!-- 메인 화면 -->
+<div id="main" class="page">
+    <h1>양질의 일자리와 경제성장</h1>
+
+    <button onclick="showPage('job')">실업자는 얼마나?</button>
+    <button onclick="showPage('reason')">실업 원인</button>
+    <button onclick="showPage('solution')">해결 방안</button>
+</div>
+
+<!-- 실업률 -->
+<div id="job" class="page">
+    <div class="content">
+        <h2>실업자는 얼마나 될까?</h2>
+        <p>
+            한국의 실업률은 약 2~3% 수준이며,
+            청년층의 체감 실업률은 더 높게 나타난다.
+        </p>
+
+        <button onclick="showPage('main')">메인으로</button>
+    </div>
+</div>
+
+<!-- 원인 -->
+<div id="reason" class="page">
+    <div class="content">
+        <h2>실업자가 발생하는 이유</h2>
+
+        <ul style="text-align:left;">
+            <li>경기 침체</li>
+            <li>경력직 선호</li>
+            <li>AI와 자동화</li>
+            <li>일자리 미스매치</li>
+        </ul>
+
+        <button onclick="showPage('main')">메인으로</button>
+    </div>
+</div>
+
+<!-- 해결방안 -->
+<div id="solution" class="page">
+    <div class="content">
+        <h2>해결 방안</h2>
+
+        <ul style="text-align:left;">
+            <li>청년 취업 지원</li>
+            <li>직업 교육 확대</li>
+            <li>창업 지원</li>
+            <li>신산업 육성</li>
+        </ul>
+
+        <button onclick="showPage('main')">메인으로</button>
+    </div>
+</div>
+
+</body>
+</html>
